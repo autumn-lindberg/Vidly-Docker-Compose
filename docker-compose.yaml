@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  frontend:
+    # can't run frontend without backend image
+    depends_on:
+      - backend
+    # where to find dockerfile for frontend
+    build: ./vidly-frontend/
+    # expose a port for frontend
+    ports:
+      - 3000:3000
+
+  backend:
+    # can't run backend without db image
+    depends_on:
+      - db
+    # where to find dockerfile for backend
+    build: ./vidly-backend/
+    # expose a port for backend
+    ports:
+      - 3001:3001
+    # set an environment variable
+    # db is the name of the image
+    # vidly is the name of the cluster to connect to
+    environment:
+      DB_URL: mongodb://db/vidly
+    # run this shell file - it include wait-for script to wait for db data
+    # command: ./docker-entrypoint.sh
+
+  db:
+    # run a mongo image (from dockerhub)
+    image: mongo:4.0-xenial
+    # run on default port for mongodb
+    ports:
+      - 27017:27017
+    # store db data in a volume for persistance
+    # when container is deleted, data still persists
+    volumes:
+      - vidly:/data/db
+
+# volume must be defined like this (weird, but necessary)
+# vidly is the name of the volume that stores db data
+volumes:
+  vidly:
+    driver: local
