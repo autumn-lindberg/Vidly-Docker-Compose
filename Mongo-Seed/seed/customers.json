@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "65347db1657594d761aab357",
+    "name": "Bobby",
+    "dateJoined": "2022-10-31T04:44:44",
+    "isGold": false,
+    "phone": "5032345216",
+    "email": "bobbybobby@gmail.com",
+    "points": 20
+  },
+  {
+    "_id": "65347db1657594d761aab358",
+    "name": "Autumn",
+    "dateJoined": "2021-10-13T01:27:01",
+    "isGold": true,
+    "phone": "5039196307",
+    "email": "autumnlindberg1@gmail.com",
+    "points": 400
+  },
+  {
+    "_id": "65347db1657594d761aab359",
+    "name": "Lilly",
+    "dateJoined": "2023-07-18T05:55:55",
+    "isGold": true,
+    "phone": "5039196307",
+    "email": "lhancock620171@gmail.com",
+    "points": 300
+  },
+  {
+    "_id": "65347db1657594d761aab35a",
+    "name": "Kate",
+    "dateJoined": "2019-09-21T13:21:55",
+    "isGold": true,
+    "phone": "5035673921",
+    "email": "katethegreat@gmail.com",
+    "points": 250
+  },
+  {
+    "_id": "65347db1657594d761aab35b",
+    "name": "Reingarde",
+    "dateJoined": "2021-08-25T15:22:33",
+    "isGold": false,
+    "phone": "5034980116",
+    "email": "tackmctackerson@gmail.com",
+    "points": 40
+  }
+]

@@ -2,21 +2,21 @@ version: "3.8"
 
 services:
   frontend:
-    # can't run frontend without backend image
-    depends_on:
-      - backend
     # where to find dockerfile for frontend
-    build: ./vidly-frontend/
+    build: ./vidly-frontend
     # expose a port for frontend
     ports:
       - 3000:3000
+    volumes:
+      - ./vidly-frontend:/app
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
 
   backend:
-    # can't run backend without db image
-    depends_on:
-      - db
     # where to find dockerfile for backend
-    build: ./vidly-backend/
+    build: ./vidly-backend
     # expose a port for backend
     ports:
       - 3001:3001
@@ -27,6 +27,8 @@ services:
       DB_URL: mongodb://db/vidly
     # run this shell file - it include wait-for script to wait for db data
     # command: ./docker-entrypoint.sh
+    volumes:
+      - ./vidly-backend:/app
 
   db:
     # run a mongo image (from dockerhub)
@@ -39,8 +41,12 @@ services:
     volumes:
       - vidly:/data/db
 
+  mongo-seed:
+    build: ./mongo-seed
+    depends_on:
+      - db
+
 # volume must be defined like this (weird, but necessary)
 # vidly is the name of the volume that stores db data
 volumes:
   vidly:
-    driver: local
