@@ -34,6 +34,7 @@ _coming soon..._
 ## Task List
 
 - [x] Get routes and pages up and running
-- [ ] Write a backend
-- [ ] Write frontend implementation
+- [x] Write a backend
+- [x] Write frontend implementation
+- [ ] Make it pretty!
 - [ ] Create a site for customers to use?
