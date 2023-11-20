@@ -4,4 +4,4 @@ COPY seed/customers.json /customers.json
 COPY seed/genres.json /genres.json
 COPY seed/movies.json /movies.json
 COPY seed/products.json /products.json
-CMD mongoimport --host db --db vidly --collection customers --type json --file /customers.json --jsonArray --mode=upsert && mongoimport --host db --db vidly --collection genres --type json --file /genres.json --jsonArray --mode=upsert && mongoimport --host db --db vidly --collection movies --type json --file /movies.json --jsonArray --mode=upsert && mongoimport --host db --db vidly --collection products --type json --file /products.json --jsonArray --mode=upsert
+CMD mongodump --host db --db vidly --collection users && mongoimport --host db --db vidly --collection customers --type json --file /customers.json --jsonArray --mode=upsert && mongoimport --host db --db vidly --collection genres --type json --file /genres.json --jsonArray --mode=upsert && mongoimport --host db --db vidly --collection movies --type json --file /movies.json --jsonArray --mode=upsert && mongoimport --host db --db vidly --collection products --type json --file /products.json --jsonArray --mode=upsert

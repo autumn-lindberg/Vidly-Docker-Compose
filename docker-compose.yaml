@@ -40,6 +40,7 @@ services:
     # when container is deleted, data still persists
     volumes:
       - vidly:/data/db
+    # command: --quiet
 
   mongo-seed:
     build: ./mongo-seed
