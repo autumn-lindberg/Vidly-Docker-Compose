@@ -13,7 +13,7 @@ A web-based video rental service.
 - Vidly-Docker-Compose (Root)
 - Mongo-Seed (Seed Data)
 
-Each part has its own repo, the whole project can be started by running `docker-compose up` while inside the `Vidly-Docker-Compose` folder
+Each part has its own repo, the whole project can be started by running `docker-compose up` while inside the `Vidly-Docker-Compose` folder ([Docker Desktop](https://www.docker.com/products/docker-desktop/) must be installed and running)
 
 ### Key Features:
 
@@ -22,57 +22,33 @@ Each part has its own repo, the whole project can be started by running `docker-
 - Customer Management
 - Rental Management
 
-## Vidly-Frontend
+## To Run The App Without Docker
 
-### Summary:
-
-Vidly frontend is a react app created using create-react-app, an npm package that generates all necessary files and dependencies to start a basic react project.
-
-## Dependencies
-
-## Organization
-
-### Workflow:
-
-- Figma (design)
-- create-react-app (npm package for creating base files)
-- React 16/18
-  - React 18 used for most components
-  - React 16 used mainly for inheritance use (explained later)
-
-### To-Do and Next Steps (see "projects" tab in repo)
-
-- [x] (None currently for frontend)
-
-### Known Issues
-
-- [ ] "Save" upon editing throws error
-  - Likely due to Axios trying to
-
-## Blockquotes
-
-> "What a great service! I'll never go back to pen and paper."
-
-## Where to Find this App
-
-[Vidly App](https://www.google.com)
-
-## To Edit or Run Source Code
+Open `Vidly-Backend/config/default.json` and change `DB-connection-string` to `http://localhost:3001/api`
 
 **Windows**
 
 ```bash
-.\run.bat
+.\run
 ```
 
 **Linux/Mac**
 
 _coming soon..._
 
+## Where to Find this App
+
+[Vidly App](http://localhost:3000)
+
 ## Task List
 
 - [x] Get routes and pages up and running
 - [x] Write a backend
 - [x] Write frontend implementation
-- [ ] Make it pretty!
+- [ ] Use Kubernetes for eventual scaling
+- [ ] Change to work on GCP Buckets/CDN
 - [ ] Create a site for customers to use?
+
+---
+
+_See other repos' **Readme.md** for more info_
